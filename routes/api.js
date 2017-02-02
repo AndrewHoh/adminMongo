@@ -196,7 +196,7 @@ function averageDatapoints(datapoints, limit){
     if(limit < 1){
         return[{
             x: new Date((min + max) / 2),
-            y: datapoints.reduce((a, b) => a.y + b.y, 0) / datapoints.length
+            y: datapoints.reduce(function(a, b){return (a.y + b.y)}, 0) / datapoints.length
         }];
     }
     var step = (max - min) / limit;
